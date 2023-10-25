@@ -1,16 +1,26 @@
 ﻿using DatabaseTask.Core.Domain;
 using Microsoft.EntityFrameworkCore;
 
-
-namespace DatabaseTask.Data
+namespace YourNamespace.Data
 {
     public class DatabaseTaskDbContext : DbContext
     {
-        public DatabaseTaskDbContext(DbContextOptions<DatabaseTaskDbContext> options)
-            : base(options) { }
+        
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<PurchaseHistory> PurchaseHistories { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
-        // näide, kuidas teha, kui lisate domaini alla ühe objekti
-        // migratsioonid peavad tulema siia libary-sse e TARge20.Data alla.
-        public DbSet<Employee> Employee { get; set; }
+        
+
+        public DatabaseTaskDbContext(DbContextOptions<DatabaseTaskDbContext> options) : base(options)
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            
+        }
     }
 }

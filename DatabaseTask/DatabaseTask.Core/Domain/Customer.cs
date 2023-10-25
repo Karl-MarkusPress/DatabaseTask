@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DatabaseTask.Core.Domain
 {
-    public class Employee
+    public class Customer
     {
         [Key]
         public Guid Id { get; set; }
@@ -18,7 +18,7 @@ namespace DatabaseTask.Core.Domain
 
         public string PhoneNumber { get; set; }
 
-        // Navigation property for relationships
-        public ICollection<Sale> Sales { get; set; } = new List<Sale>();
+        
+        public PurchaseHistory PurchaseHistory { get; set; }
     }
 }
