@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DatabaseTask.Core.Domain
 {
@@ -12,12 +13,14 @@ namespace DatabaseTask.Core.Domain
         public DateTime PurchaseDate { get; set; }
 
         [Required]
-        public decimal TotalAmount { get; set; }
+        public int TotalAmount { get; set; }
 
-        
-        public Guid CustomerId { get; set; }
 
-        
-        public Customer Customer { get; set; }
+        [ForeignKey("ProductId")]
+        public virtual Product Product { get; set; }
+
+
+        [ForeignKey("CustomerId")]
+        public virtual Customer Customer { get; set; }
     }
 }

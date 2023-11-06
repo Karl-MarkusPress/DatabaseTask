@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DatabaseTask.Core.Domain
 {
@@ -15,14 +16,15 @@ namespace DatabaseTask.Core.Domain
         public int Quantity { get; set; }
 
         [Required]
-        public decimal TotalAmount { get; set; }
+        public int TotalAmount { get; set; }
 
-        // Foreign keys for relationships
-        public Guid EmployeeId { get; set; }
-        public Guid ProductId { get; set; }
 
         // Navigation properties for relationships
-        public Employee Employee { get; set; }
-        public Product Product { get; set; }
+
+        [ForeignKey("EmployeeId")]
+        public virtual Employee Employee { get; set; }
+
+        [ForeignKey("ProductId")]
+        public virtual Product Product { get; set; }
     }
 }
