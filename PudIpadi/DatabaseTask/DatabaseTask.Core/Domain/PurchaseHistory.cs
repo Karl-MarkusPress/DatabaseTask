@@ -7,7 +7,7 @@ namespace DatabaseTask.Core.Domain
     public class PurchaseHistory
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public DateTime PurchaseDate { get; set; }

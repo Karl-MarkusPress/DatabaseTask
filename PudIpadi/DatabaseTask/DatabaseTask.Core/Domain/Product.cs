@@ -6,7 +6,7 @@ namespace DatabaseTask.Core.Domain
     public class Product
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string ProductName { get; set; }

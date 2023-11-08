@@ -6,7 +6,7 @@ namespace DatabaseTask.Core.Domain
     public class Customer
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string FirstName { get; set; }
@@ -16,7 +16,7 @@ namespace DatabaseTask.Core.Domain
 
         public string Email { get; set; }
 
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         
     

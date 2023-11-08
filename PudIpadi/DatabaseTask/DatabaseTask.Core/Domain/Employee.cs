@@ -6,7 +6,7 @@ namespace DatabaseTask.Core.Domain
     public class Employee
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string FirstName { get; set; }
